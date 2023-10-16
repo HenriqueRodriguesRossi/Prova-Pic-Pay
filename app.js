@@ -1,3 +1,4 @@
+debugger
 const express = require("express")
 const app = express()
 const cors = require("cors")
@@ -8,11 +9,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
-const CommonUserRouter = require("./controllers/CommonUserController")
-app.use(CommonUserRouter)
-
-const LojistUserSchema = require("./controllers/LojistUserController")
-app.use(LojistUserSchema)
+const UserRouter = require("./controllers/UserController")
+app.use(UserRouter)
 
 app.listen(8080, ()=>{
     console.log("Servidor rodando na porta 8080!")

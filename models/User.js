@@ -24,6 +24,11 @@ const CommonUserSchema = new mongoose.Schema({
         required: false,
         default: "COMMON"
     },
+    ammount:{
+        type: Number,
+        required: false,
+        default: 0.00
+    },
     createdAt:{
         type: Date,
         default: Date().now
