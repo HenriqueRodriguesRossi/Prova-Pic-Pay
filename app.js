@@ -11,6 +11,9 @@ app.use(cors())
 const CommonUserRouter = require("./controllers/CommonUserController")
 app.use(CommonUserRouter)
 
+const LojistUserSchema = require("./controllers/LojistUserController")
+app.use(LojistUserSchema)
+
 app.listen(8080, ()=>{
     console.log("Servidor rodando na porta 8080!")
 })

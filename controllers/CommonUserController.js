@@ -21,9 +21,13 @@ router.post("/new-common-user", async (req, res)=>{
         const emailValidate = await CommonUser.findOne({email})
         const cpfValidate = await CommonUser.findOne({cpf})
 
-        if(emailValidate || cpfValidate){
+        if(emailValidate){
             return res.status(422).send({
-                mensagem: "Email ou cpf já foram utilizados anteriormente!"
+                mensagem: "Este email já foi cadastrado!"
+            })
+        }else if(cpfValidate){
+            return res.status(422).send({
+                mensagem: "Este cpf já foi cadastrado!"
             })
         }
 
